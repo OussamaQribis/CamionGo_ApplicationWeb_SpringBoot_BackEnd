@@ -1,2 +1,4 @@
-package com.example.CamionGo.Configuration;public class JwtUtil {
+package com.example.CamionGo.Configuration;
+
+public class JwtUtil {
 }

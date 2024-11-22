@@ -1,2 +1,4 @@
-package com.example.CamionGo.Configuration;public class SimpleCorsFilter {
+package com.example.CamionGo.Configuration;
+
+public class SimpleCorsFilter {
 }

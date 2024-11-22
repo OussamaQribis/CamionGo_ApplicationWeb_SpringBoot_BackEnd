@@ -1,2 +1,16 @@
-package com.example.CamionGo.Entities;public class Client {
+package com.example.CamionGo.Entities;
+
+import jakarta.persistence.Entity;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Entity
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+public class Client extends Utilisateur {
+private String adresse;
+
+
 }

@@ -1,2 +1,4 @@
-package com.example.CamionGo.Configuration;public class JwtRequestFilter {
+package com.example.CamionGo.Configuration;
+
+public class JwtRequestFilter {
 }

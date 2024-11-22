@@ -1,2 +1,12 @@
-package com.example.CamionGo.Configuration;public class WebSecurityConfiguration {
+package com.example.CamionGo.Configuration;
+
+import org.springframework.context.annotation.Configuration;
+import org.springframework.security.config.annotation.method.configuration.EnableMethodSecurity;
+import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
+
+@Configuration
+@EnableWebSecurity
+@EnableMethodSecurity
+public class WebSecurityConfiguration {
+
 }
