@@ -1,6 +1,7 @@
 package com.example.CamionGo.Entities;
 
 
+import com.example.CamionGo.Enums.Role;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -20,7 +21,8 @@ public abstract class Utilisateur {
  private String email;
  private String motDePasse;
  private String telephone;
-private String type; // "Client" أو "Transporteur"
+ private Boolean etat; // active desactive
+ private Role role; // "Client" أو "Transporteur"
 
 
 }

@@ -1,12 +1,10 @@
 package com.example.CamionGo.Entities;
 
-import jakarta.persistence.CascadeType;
-import jakarta.persistence.Entity;
-import jakarta.persistence.OneToMany;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -16,11 +14,13 @@ import java.util.List;
 @NoArgsConstructor
 public class Transporteur extends Utilisateur {
 
- private String numeroLicence;
- private Boolean disponibilite;
-
  @OneToMany(mappedBy = "transporteur", cascade = CascadeType.ALL)
- private List<Vehicule> vehicules = new ArrayList<>();
+ @JsonManagedReference
+ private List<Commande> livraisonDesCommandes =new ArrayList<>();;
+ @OneToOne
+ @JoinColumn(name = "transporteur_id")
+ @JsonManagedReference
+ private Vehicule vehicule ;
 
 
 }
