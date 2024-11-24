@@ -1,4 +1,4 @@
-package com.example.CamionGo.Services.JWT.TypeMarchondise;
+package com.example.CamionGo.Services.TypeMarchondise;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;

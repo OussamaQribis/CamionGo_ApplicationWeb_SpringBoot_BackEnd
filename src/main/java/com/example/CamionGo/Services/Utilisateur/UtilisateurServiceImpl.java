@@ -1,4 +1,4 @@
-package com.example.CamionGo.Services.JWT.Utilisateur;
+package com.example.CamionGo.Services.Utilisateur;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;

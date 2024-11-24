@@ -1,9 +1,9 @@
-package com.example.CamionGo.Services.Authontification;
+package com.example.CamionGo.Services.Auth;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 @Service
 @RequiredArgsConstructor
-public class AuthontificationServiceImpl implements AuthontificationService{
+public class AuthServiceImpl implements AuthService {
 }

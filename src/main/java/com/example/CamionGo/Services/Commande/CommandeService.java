@@ -1,4 +1,4 @@
-package com.example.CamionGo.Services.JWT.Commande;
+package com.example.CamionGo.Services.Commande;
 
 public interface CommandeService {
 }

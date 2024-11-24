@@ -1,4 +1,4 @@
-package com.example.CamionGo.Services.Authontification;
+package com.example.CamionGo.Services.Auth;
 
-public interface AuthontificationService {
+public interface AuthService {
 }

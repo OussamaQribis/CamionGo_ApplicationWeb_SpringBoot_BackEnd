@@ -1,4 +1,4 @@
-package com.example.CamionGo.Services.JWT.Transporteur;
+package com.example.CamionGo.Services.Transporteur;
 
 public interface TransporteurService {
 }

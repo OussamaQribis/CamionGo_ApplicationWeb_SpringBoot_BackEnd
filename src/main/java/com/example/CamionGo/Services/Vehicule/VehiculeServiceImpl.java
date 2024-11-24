@@ -1,4 +1,4 @@
-package com.example.CamionGo.Services.JWT.Vehicule;
+package com.example.CamionGo.Services.Vehicule;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;

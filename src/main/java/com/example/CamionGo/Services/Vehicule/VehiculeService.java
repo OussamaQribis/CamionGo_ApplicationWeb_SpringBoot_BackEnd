@@ -1,4 +1,4 @@
-package com.example.CamionGo.Services.JWT.Vehicule;
+package com.example.CamionGo.Services.Vehicule;
 
 public interface VehiculeService {
 }
