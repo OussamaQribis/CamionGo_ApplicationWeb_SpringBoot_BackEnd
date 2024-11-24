@@ -1,6 +1,7 @@
-package com.coderdot.configuration;
+package com.example.CamionGo.configuration;
 
-import com.coderdot.filters.JwtRequestFilter;
+
+import com.example.CamionGo.filters.JwtRequestFilter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -19,15 +20,12 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 @EnableWebSecurity
 @EnableMethodSecurity
 public class WebSecurityConfiguration {
-
     private final JwtRequestFilter jwtRequestFilter;
 
     @Autowired
     public WebSecurityConfiguration(JwtRequestFilter jwtRequestFilter) {
         this.jwtRequestFilter = jwtRequestFilter;
     }
-
-
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity security) throws Exception {
         return security.csrf().disable()

@@ -1,4 +1,4 @@
-package com.coderdot.dto.Auth;
+package com.example.CamionGo.DTO.Auth;
 
 public record HelloResponse(String message) {
 }

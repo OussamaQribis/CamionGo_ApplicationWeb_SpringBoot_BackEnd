@@ -1,6 +1,5 @@
-package com.coderdot.dto.Auth;
+package com.example.CamionGo.DTO.Auth;
 
-import com.coderdot.entities.User;
-
-public record LoginResponse(String jwt, User user) {
+import com.example.CamionGo.Entities.Utilisateur;
+public record LoginResponse(String jwt, Utilisateur user) {
 }

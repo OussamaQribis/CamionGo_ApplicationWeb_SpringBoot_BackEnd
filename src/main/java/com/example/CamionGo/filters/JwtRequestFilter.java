@@ -1,7 +1,7 @@
-package com.coderdot.filters;
+package com.example.CamionGo.filters;
 
-import com.coderdot.services.jwt.CustomerServiceImpl;
-import com.coderdot.utils.JwtUtil;
+import com.example.CamionGo.Services.JWT.CustomerServiceImpl;
+import com.example.CamionGo.utils.JwtUtil;
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
@@ -21,7 +21,6 @@ public class JwtRequestFilter extends OncePerRequestFilter {
 
     private final CustomerServiceImpl customerService;
     private final JwtUtil jwtUtil;
-
     @Autowired
     public JwtRequestFilter(CustomerServiceImpl customerService, JwtUtil jwtUtil) {
         this.customerService = customerService;

@@ -1,11 +1,10 @@
-package com.coderdot.controllers.Auth;
+package com.example.CamionGo.Controllers.Auth;
 
-import com.coderdot.dto.Auth.LoginRequest;
-import com.coderdot.dto.Auth.LoginResponse;
-import com.coderdot.entities.User;
-import com.coderdot.repository.UserRepository;
-import com.coderdot.services.jwt.CustomerServiceImpl;
-import com.coderdot.utils.JwtUtil;
+import com.example.CamionGo.DTO.Auth.LoginRequest;
+import com.example.CamionGo.DTO.Auth.LoginResponse;
+import com.example.CamionGo.Repositories.UtilisateurRepositroy;
+import com.example.CamionGo.Services.JWT.CustomerServiceImpl;
+import com.example.CamionGo.utils.JwtUtil;
 import jakarta.servlet.http.HttpServletResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -30,11 +29,11 @@ public class LoginController {
     private final CustomerServiceImpl customerService;
 
     private final JwtUtil jwtUtil;
-    private final UserRepository userRepository;
+    private final UtilisateurRepositroy userRepository;
 
 
     @Autowired
-    public LoginController(AuthenticationManager authenticationManager, CustomerServiceImpl customerService, JwtUtil jwtUtil, UserRepository userRepository) {
+    public LoginController(AuthenticationManager authenticationManager, CustomerServiceImpl customerService, JwtUtil jwtUtil, UtilisateurRepositroy userRepository) {
         this.authenticationManager = authenticationManager;
         this.customerService = customerService;
         this.jwtUtil = jwtUtil;
@@ -55,7 +54,6 @@ public class LoginController {
         }
         final UserDetails userDetails = customerService.loadUserByUsername(loginRequest.getEmail());
         final String jwt = jwtUtil.generateToken(userDetails.getUsername());
-
 
         return new LoginResponse(jwt,userRepository.findByEmail(loginRequest.getEmail()).get());
     }

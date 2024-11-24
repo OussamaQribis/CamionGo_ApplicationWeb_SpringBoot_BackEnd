@@ -1,8 +1,8 @@
-package com.coderdot.controllers.Auth;
+package com.example.CamionGo.Controllers.Auth;
 
-import com.coderdot.dto.Auth.SignupRequest;
-import com.coderdot.entities.User;
-import com.coderdot.services.Auth.AuthService;
+import com.example.CamionGo.DTO.Auth.SignupRequest;
+import com.example.CamionGo.Entities.Utilisateur;
+import com.example.CamionGo.Services.Auth.AuthService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -23,12 +23,9 @@ public class SignupController {
     }
 
     @PostMapping
-    public User signupCustomer(@RequestBody SignupRequest signupRequest) {
-        User createdCustomer = authService.createUser(signupRequest);
-
-
+    public Utilisateur signupCustomer(@RequestBody SignupRequest signupRequest) {
+        Utilisateur createdCustomer = authService.createUser(signupRequest);
         if (createdCustomer != null) {
-
             return createdCustomer;
         } else {
             return null;

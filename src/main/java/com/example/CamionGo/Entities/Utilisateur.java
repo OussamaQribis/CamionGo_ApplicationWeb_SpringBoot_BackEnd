@@ -25,4 +25,5 @@ public abstract class Utilisateur {
  private Role role; // "Client" أو "Transporteur"
 
 
+
 }

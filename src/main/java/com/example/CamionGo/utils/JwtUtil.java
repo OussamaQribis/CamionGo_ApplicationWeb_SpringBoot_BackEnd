@@ -1,4 +1,4 @@
-package com.coderdot.utils;
+package com.example.CamionGo.utils;
 
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;

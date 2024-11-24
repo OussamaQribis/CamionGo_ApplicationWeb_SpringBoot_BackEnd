@@ -1,4 +1,4 @@
-package com.coderdot.configuration;
+package com.example.CamionGo.configuration;
 
 import jakarta.servlet.*;
 import jakarta.servlet.http.HttpServletRequest;
