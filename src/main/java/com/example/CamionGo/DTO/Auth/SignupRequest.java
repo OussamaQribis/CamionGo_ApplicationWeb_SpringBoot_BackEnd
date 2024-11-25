@@ -1,6 +1,11 @@
 package com.example.CamionGo.DTO.Auth;
 
+import com.example.CamionGo.Entities.TypeMarchondise;
+import com.example.CamionGo.Entities.Vehicule;
 import com.example.CamionGo.Enums.Role;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.OneToOne;
 import lombok.Data;
 
 @Data
@@ -12,7 +17,6 @@ public class SignupRequest {
     private String telephone;
     private Boolean etat; // active desactive
     private Role role; // "Client" أو "Transporteur"
-
 
 
 

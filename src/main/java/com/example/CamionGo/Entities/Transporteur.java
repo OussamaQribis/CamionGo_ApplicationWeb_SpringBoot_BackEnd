@@ -13,7 +13,6 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 public class Transporteur extends Utilisateur {
-
  @OneToMany(mappedBy = "transporteur", cascade = CascadeType.ALL)
  @JsonManagedReference
  private List<Commande> livraisonDesCommandes =new ArrayList<>();;

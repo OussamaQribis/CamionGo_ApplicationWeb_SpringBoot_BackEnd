@@ -19,10 +19,7 @@ public class Vehicule {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    @OneToOne
-    @JoinColumn(name = "typeVehicule_id")
-    @JsonManagedReference
-    private TypeVehicule typeVehicule;
+    private String type;
     @OneToOne
     @JoinColumn(name = "typeMarchondise_id")
     @JsonManagedReference

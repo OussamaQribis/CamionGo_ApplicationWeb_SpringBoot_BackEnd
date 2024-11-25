@@ -2,7 +2,7 @@ package com.example.CamionGo.configuration;
 
 
 import com.example.CamionGo.filters.JwtRequestFilter;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -19,20 +19,18 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 @Configuration
 @EnableWebSecurity
 @EnableMethodSecurity
+@RequiredArgsConstructor
 public class WebSecurityConfiguration {
     private final JwtRequestFilter jwtRequestFilter;
 
-    @Autowired
-    public WebSecurityConfiguration(JwtRequestFilter jwtRequestFilter) {
-        this.jwtRequestFilter = jwtRequestFilter;
-    }
+
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity security) throws Exception {
         return security.csrf().disable()
                 .authorizeHttpRequests()
                 .requestMatchers("/signup", "/login").permitAll()
                 .and()
-                .authorizeHttpRequests().requestMatchers("/api/**","/suiviAT/**","/BonDintervention/**")
+                .authorizeHttpRequests().requestMatchers("/api/**")
                 .authenticated()
                 .and()
                 .sessionManagement()
