@@ -4,14 +4,13 @@ import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import java.util.List;
 
 @Entity
-@Data
+@Getter
+@Setter
 @AllArgsConstructor
 @NoArgsConstructor
 public class Vehicule {
@@ -19,12 +18,15 @@ public class Vehicule {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String type;
-    @OneToOne
+    @ManyToOne
     @JoinColumn(name = "typeMarchondise_id")
     @JsonManagedReference
     private TypeMarchondise typeMarchondise;
-    private Double poids;
+    @ManyToOne
+    @JoinColumn(name = "typeVehicule_id")
+    @JsonManagedReference
+    private TypeVehicule typeVehicule;
+    private int poids;
     private String numMatriculation;
     private String numMatriculationRemoque;
     @OneToOne(mappedBy = "vehicule")

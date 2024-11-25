@@ -3,13 +3,12 @@ package com.example.CamionGo.Entities;
 
 import com.example.CamionGo.Enums.Role;
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 @Entity
 @Inheritance(strategy = InheritanceType.JOINED)
-@Data
+@Getter
+@Setter
 @AllArgsConstructor
 @NoArgsConstructor
 public abstract class Utilisateur {
