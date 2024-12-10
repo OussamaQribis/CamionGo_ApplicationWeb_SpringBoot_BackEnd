@@ -30,26 +30,23 @@ public class AuthServiceImpl implements AuthService {
     @Override
     public Utilisateur createUser(SignupRequest signupRequest) {
         //Check if Request is Client or Transporteur already exist
-        if(signupRequest.getRole().equals(Role.CLIENT)){
-            //Check if Client  already exist
-            if (clientRepository.existsByEmail(signupRequest.getEmail())) {
-                return null;
-            }else{
+        if (clientRepository.existsByEmail(signupRequest.getEmail()) || transporteurRepositroy.existsByEmail(signupRequest.getEmail())) {
+            return null; }
+        else {
+        if(signupRequest.getRole()==1){
                 Client client= new Client();
                 BeanUtils.copyProperties(signupRequest,client);
                 client.setRole(Role.CLIENT);
                 client.setEmail(signupRequest.getEmail());
-                client.setEtat(signupRequest.getEtat());
+                client.setEtat(true);
                 client.setNom(signupRequest.getNom());
                 client.setTelephone(signupRequest.getTelephone());
                 //Hash the password before saving
                 String hashPassword = passwordEncoder.encode(signupRequest.getMotDePasse());
                 client.setMotDePasse(hashPassword);
                 return clientRepository.save(client);
-            }
-
         }
-        if(signupRequest.getRole().equals(Role.TRANSPORTEUR)){
+        if(signupRequest.getRole()==0){
             Transporteur transporteur= new Transporteur();
             BeanUtils.copyProperties(signupRequest,transporteur);
             transporteur.setRole(Role.TRANSPORTEUR);
@@ -60,17 +57,9 @@ public class AuthServiceImpl implements AuthService {
             //Hash the password before saving
             String hashPassword = passwordEncoder.encode(signupRequest.getMotDePasse());
             transporteur.setMotDePasse(hashPassword);
-            /*
-            //add vehicule
-            Vehicule vehicule=new Vehicule();
-            vehicule.setType(signupRequest.getType());
-            vehicule.setPoids(signupRequest.getPoids());
-            vehicule.setNumMatriculation(signupRequest.getNumMatriculation());
-            vehicule.setNumMatriculationRemoque(signupRequest.getNumMatriculationRemoque());
-            vehicule.setTransporteur(transporteur);
-            */
             return transporteurRepositroy.save(transporteur);
 
+        }
         }
         /*if(signupRequest.getRole().equals(Role.ADMIN)){
 

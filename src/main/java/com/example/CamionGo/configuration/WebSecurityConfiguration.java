@@ -30,7 +30,7 @@ public class WebSecurityConfiguration {
                 .authorizeHttpRequests()
                 .requestMatchers("/signup", "/login").permitAll()
                 .and()
-                .authorizeHttpRequests().requestMatchers("/api/**")
+                .authorizeHttpRequests().requestMatchers("/client/**")
                 .authenticated()
                 .and()
                 .sessionManagement()

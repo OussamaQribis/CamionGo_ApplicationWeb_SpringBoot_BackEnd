@@ -1,6 +1,9 @@
 package com.example.CamionGo.Entities;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
+import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -14,9 +17,9 @@ import java.util.List;
 @NoArgsConstructor
 public class Client extends Utilisateur {
 
-    @OneToMany(mappedBy = "client", cascade = CascadeType.ALL)
-    @JsonManagedReference
-    private List<Commande> historiqueCommandes =new ArrayList<>();;
+    @OneToMany(mappedBy = "client")
+    @JsonBackReference
+    private List<Commande> historiqueCommandes =new ArrayList<>();
 
 
 }

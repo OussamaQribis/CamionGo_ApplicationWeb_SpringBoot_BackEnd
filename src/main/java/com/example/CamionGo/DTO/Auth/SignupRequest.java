@@ -16,7 +16,7 @@ public class SignupRequest {
     private String motDePasse;
     private String telephone;
     private Boolean etat; // active desactive
-    private Role role; // "Client" أو "Transporteur"
+    private int role; // "Client" أو "Transporteur"
 
 
 

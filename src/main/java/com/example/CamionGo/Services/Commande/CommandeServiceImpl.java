@@ -5,6 +5,8 @@ import com.example.CamionGo.Repositories.CommandeRepositroy;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 @RequiredArgsConstructor
 public class CommandeServiceImpl implements CommandeService{
@@ -14,5 +16,15 @@ public class CommandeServiceImpl implements CommandeService{
         if(commande!=null)
             return commandeRepositroy.save(commande);
         return null;
+    }
+
+    @Override
+    public Commande searchById(Long id) {
+        return commandeRepositroy.findById(id).get();
+    }
+
+    @Override
+    public List<Commande> getAllCommandes() {
+        return commandeRepositroy.findAll();
     }
 }

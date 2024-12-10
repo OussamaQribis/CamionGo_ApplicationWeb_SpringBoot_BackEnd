@@ -15,4 +15,5 @@ public interface TransporteurRepositroy extends JpaRepository<Transporteur,Long>
     Optional<Transporteur> findById(Long id);
     @Override
     List<Transporteur> findAll();
+
 }
